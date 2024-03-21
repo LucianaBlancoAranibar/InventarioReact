@@ -6,7 +6,7 @@ import AlmacensComponent from './AlmacenComponent';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './Menu'; 
 import ListaAlmacenesComponent from './ListaAlmacenesComponent';
-
+import AlmacenEdit from './AlmacenEdit';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -17,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/AlmacensComponent" element={<AlmacensComponent />} />
         <Route path="/ListaAlmacenesComponent" element={<ListaAlmacenesComponent />} />
+        <Route path="/AlmacenEdit/:id" element={<AlmacenEdit />} />
         {/* Agrega más rutas según sea necesario */}
       </Routes>
     </BrowserRouter>

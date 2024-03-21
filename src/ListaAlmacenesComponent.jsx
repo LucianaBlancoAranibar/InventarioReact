@@ -21,6 +21,15 @@ const ListaAlmacenesComponent = () => {
 
     obtenerAlmacenes();
   }, []);
+  const eliminarAlmacen = async (id) => {
+    try {
+      await axios.delete(`https://localhost:7010/api/Almacens/${id}`);
+      // Actualizar la lista de almacenes tras la eliminación
+      setAlmacenes(almacenes.filter((almacen) => almacen.almacenId !== id));
+    } catch (error) {
+      console.error("Error al eliminar el almacén:", error);
+    }
+  };
   const irACrearAlmacen = () => {
     navigate('/AlmacensComponent'); // Navega a la ruta deseada
   };
@@ -38,6 +47,7 @@ const ListaAlmacenesComponent = () => {
           <tr>
             <th className="px-4 py-2 border">Nombre</th>
             <th className="px-4 py-2 border">Dirección</th>
+            <th className="px-4 py-2 border">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -46,13 +56,25 @@ const ListaAlmacenesComponent = () => {
               <tr key={almacen.almacenId}>
                 <td className="border px-4 py-2">{almacen.nombreAlmacen}</td>
                 <td className="border px-4 py-2">{almacen.direccionAlmacen}</td>
+                <td className="border px-4 py-2">
+                  <button
+                    onClick={() => navigate(`/AlmacenEdit/${almacen.almacenId}`)}
+                    className="text-indigo-600 hover:text-indigo-900 mr-3"
+                  >
+                    Actualizar
+                  </button>
+                  <button
+                    onClick={() => eliminarAlmacen(almacen.almacenId)}
+                    className="text-red-600 hover:text-red-900"
+                  >
+                    Eliminar
+                  </button>
+                </td>
               </tr>
             ))
           ) : (
             <tr>
-              <td className="border px-4 py-2" colSpan="2">
-                Cargando almacenes...
-              </td>
+              <td className="border px-4 py-2" colSpan="3">Cargando almacenes...</td>
             </tr>
           )}
         </tbody>
