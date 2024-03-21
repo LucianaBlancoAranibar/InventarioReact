@@ -12,7 +12,7 @@ const AlmacenEdit = () => {
     const cargarAlmacen = async () => {
       try {
         const respuesta = await axios.get(`https://localhost:7010/api/Almacens/${id}`);
-        // Asegúrate de que los campos en `respuesta.data` coincidan con tu API, este es un mensaje de prueba espero que de po
+        // Asegúrate de que los campos en `respuesta.data` coincidan con tu API
         setNombre(respuesta.data.nombreAlmacen);
         setDireccion(respuesta.data.direccionAlmacen);
       } catch (error) {
