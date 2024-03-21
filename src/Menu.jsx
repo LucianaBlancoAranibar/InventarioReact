@@ -22,7 +22,7 @@ export default function Navigation() {
                     <a href="/ListCategory" class="text-gray-900 dark:text-white hover:underline">Categoria</a>
                 </li>
                 <li>
-                    <a href="#" class="text-gray-900 dark:text-white hover:underline">Features</a>
+                    <a href="/ListProduct" class="text-gray-900 dark:text-white hover:underline">Product</a>
                 </li>
             </ul>
         </div>

@@ -12,7 +12,9 @@ import UbicacionEdit from './UbicacionEdit';
 import FormUbicacion from './FormUbicacion';
 import ListCategory from './ListCategory';
 import FormCategory from './FormCategory';
-
+import ListProduct from './ListProduct';
+import ProductForm from './ProductForm';
+import ProductEdit from './ProductEdit';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -30,7 +32,9 @@ function App() {
         <Route path="/FormUbicacion" element={<FormUbicacion />} />
         <Route path="/ListCategory" element={<ListCategory />} />
         <Route path="/FormCategory" element={<FormCategory />} />
-
+        <Route path="/ListProduct" element={<ListProduct />} />
+        <Route path="/ProductForm" element={<ProductForm />} />
+        <Route path="/ProductEdit/:id" element={<ProductEdit />} />
       </Routes>
     </BrowserRouter>
     </>

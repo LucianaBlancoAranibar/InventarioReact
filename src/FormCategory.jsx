@@ -11,7 +11,7 @@ const FormCategory = () => {
 
     try {
       const respuesta = await axios.post("https://localhost:7010/api/Categoriums", {
-        NombreCategoria: nombre,
+        NombreCategory: nombre,
         Descripcion: descripcion,
     
       });
