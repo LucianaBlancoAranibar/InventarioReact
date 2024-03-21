@@ -27,9 +27,17 @@ const ListaUbicacionesComponent = () => {
       console.error("Error al eliminar el almacén:", error);
     }
   };
-
+  const irACrearUbicacion= () => {
+    navigate('/FormUbicacion'); // Navega a la ruta deseada
+  };
   return (
     <div className="container mx-auto mt-8">
+        <button
+        onClick={irACrearUbicacion}
+        className="mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Crear Ubicacion
+      </button>
       <h2 className="text-2xl font-semibold mb-4">Lista de Ubicaciones</h2>
       <table className="min-w-full table-auto">
         <thead>
