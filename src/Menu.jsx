@@ -13,10 +13,10 @@ export default function Navigation() {
         <div class="flex items-center">
             <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
                 <li>
-                    <a href="/ListaAlmacenesComponent" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Lista</a>
+                    <a href="/ListaAlmacenesComponent" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Almacenes</a>
                 </li>
                 <li>
-                    <a href="#" class="text-gray-900 dark:text-white hover:underline">Company</a>
+                    <a href="/ListaUbicaciones" class="text-gray-900 dark:text-white hover:underline">Ubicaciones</a>
                 </li>
                 <li>
                     <a href="#" class="text-gray-900 dark:text-white hover:underline">Team</a>

@@ -7,6 +7,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './Menu'; 
 import ListaAlmacenesComponent from './ListaAlmacenesComponent';
 import AlmacenEdit from './AlmacenEdit';
+import ListaUbicaciones from './ListaUbicaciones';
+import UbicacionEdit from './UbicacionEdit';
+import FormUbicacion from './FormUbicacion';
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -18,7 +22,9 @@ function App() {
         <Route path="/AlmacensComponent" element={<AlmacensComponent />} />
         <Route path="/ListaAlmacenesComponent" element={<ListaAlmacenesComponent />} />
         <Route path="/AlmacenEdit/:id" element={<AlmacenEdit />} />
-        {/* Agrega más rutas según sea necesario */}
+        <Route path="/ListaUbicaciones" element={<ListaUbicaciones />} />
+        <Route path="/UbicacionEdit/:id" element={<UbicacionEdit />} />
+        <Route path="/FormUbicacion" element={<FormUbicacion />} />
       </Routes>
     </BrowserRouter>
     </>
