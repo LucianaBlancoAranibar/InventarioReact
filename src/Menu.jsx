@@ -16,6 +16,9 @@ export default function Navigation() {
                     <a href="/ListaAlmacenesComponent" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Lista</a>
                 </li>
                 <li>
+                    <a href="/Proveedor_List" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Proveedores</a>
+                </li>
+                <li>
                     <a href="#" class="text-gray-900 dark:text-white hover:underline">Company</a>
                 </li>
                 <li>

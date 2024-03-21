@@ -1,0 +1,110 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+
+const ProveedorCreate = () => {
+  const [nombreProveedor, setNombreProveedor] = useState('');
+  const [telefono, setTelefono] = useState('');
+  const [email, setEmail] = useState('');
+  const [direccionProveedor, setDireccionProveedor] = useState('');
+
+  const registrarProveedor = async () => {
+    try {
+      const respuesta = await axios.post(
+        'https://localhost:7010/api/Proveedors', 
+        {
+          NombreProveedor: nombreProveedor,
+          Telefono: telefono,
+          Email: email,
+          DireccionProveedor: direccionProveedor
+        }
+      );
+      console.log('Proveedor registrado:', respuesta.data);
+      setNombreProveedor('');
+      setTelefono('');
+      setEmail('');
+      setDireccionProveedor('');
+    } catch (error) {
+      console.error('Error al registrar proveedor:', error);
+    }
+  };
+
+  return (
+    <section className="container mx-auto mt-8">
+      <div className="mx-auto max-w-2xl lg:py-16">
+        <h2 className="text-2xl font-semibold mb-4">Registrar Proveedor</h2>
+        <form
+          className="w-full"
+          onSubmit={(e) => {
+            e.preventDefault();
+            registrarProveedor();
+          }}
+        >
+          <div className="mb-6">
+            <label className="block mb-2 text-sm font-medium text-gray-900" htmlFor="nombreProveedor">
+              Nombre del Proveedor
+            </label>
+            <input
+              type="text"
+              id="nombreProveedor"
+              value={nombreProveedor}
+              onChange={(e) => setNombreProveedor(e.target.value)}
+              className="bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 block w-full"
+              placeholder="Ingrese el nombre del proveedor"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label className="block mb-2 text-sm font-medium text-gray-900" htmlFor="telefono">
+              Teléfono
+            </label>
+            <input
+              type="text"
+              id="telefono"
+              value={telefono}
+              onChange={(e) => setTelefono(e.target.value)}
+              className="bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 block w-full"
+              placeholder="Ingrese el teléfono del proveedor"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label className="block mb-2 text-sm font-medium text-gray-900" htmlFor="email">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 block w-full"
+              placeholder="Ingrese el correo electrónico del proveedor"
+              required
+            />
+          </div>
+          <div className="mb-6">
+            <label className="block mb-2 text-sm font-medium text-gray-900" htmlFor="direccionProveedor">
+              Dirección
+            </label>
+            <input
+              type="text"
+              id="direccionProveedor"
+              value={direccionProveedor}
+              onChange={(e) => setDireccionProveedor(e.target.value)}
+              className="bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 block w-full"
+              placeholder="Ingrese la dirección del proveedor"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+          >
+            Registrar Proveedor
+          </button>
+        </form>
+      </div>
+    </section>
+  );
+};
+
+export default ProveedorCreate;
