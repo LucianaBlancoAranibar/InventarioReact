@@ -30,7 +30,6 @@ const ProveedorEdit = () => {
         setDireccionProveedor(proveedor.direccionProveedor);
       } catch (error) {
         console.error("Error al obtener datos del proveedor:", error);
-        // Opcionalmente, redirigir a una ruta de error o mostrar un mensaje
       }
     };
 
@@ -51,21 +50,27 @@ const ProveedorEdit = () => {
         }
       );
       console.log("Proveedor actualizado:", resultado.data);
-      navigate("/ProveedorList"); // Redirige al usuario a la lista de proveedores
+  
+      // Muestra el mensaje de éxito
+      toast.success("Proveedor actualizado con éxito!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+  
+      // Espera un momento antes de redirigir para que el usuario vea el mensaje
+      setTimeout(() => navigate("/ProveedorList"), 2000);
+  
     } catch (error) {
-      if (error.response) {
-        // La respuesta del servidor con el código de estado y el mensaje de error
-        console.error(
-          "Error response:",
-          error.response.status,
-          error.response.data
-        );
-      } else {
-        // Otros errores como problemas de red, etc.
-        console.error("Error message:", error.message);
-      }
+      console.error("Error al actualizar proveedor:", error);
+      toast.error("Error al actualizar proveedor.");
     }
   };
+  
 
   return (
     <div className="edit-proveedor-container max-w-2xl mx-auto mt-10 p-8 shadow-lg rounded-lg">
@@ -99,12 +104,19 @@ const ProveedorEdit = () => {
           <input
             type="text"
             id="telefono"
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             value={telefono}
-            onChange={(e) => setTelefono(e.target.value)}
+            onChange={(e) => {
+              const valor = e.target.value;
+              if (valor === '' || (/^\d+$/.test(valor) && valor.length <= 8)) {
+                setTelefono(valor);
+              }
+            }}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            maxLength="8" 
             required
           />
         </div>
+
         <div className="form-group mb-4">
           <label
             htmlFor="email"

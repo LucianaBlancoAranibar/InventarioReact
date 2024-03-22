@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProveedorList = () => {
   const [proveedores, setProveedores] = useState([]);
@@ -26,17 +28,23 @@ const ProveedorList = () => {
   };
 
   const eliminarProveedor = async (id) => {
-    const confirmar = window.confirm(
-      "¿Estás seguro de que deseas eliminar este proveedor?"
-    );
+    const confirmar = window.confirm("¿Estás seguro de que deseas eliminar este proveedor?");
     if (confirmar) {
       try {
         await axios.delete(`https://localhost:7010/api/Proveedors/${id}`);
-        setProveedores(
-          proveedores.filter((proveedor) => proveedor.proveedorId !== id)
-        );
+        setProveedores(proveedores.filter((proveedor) => proveedor.proveedorId !== id));
+        toast.success("Proveedor eliminado con éxito!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       } catch (error) {
         console.error("Error al eliminar proveedor:", error);
+        toast.error("Error al eliminar proveedor.");
       }
     }
   };
@@ -109,6 +117,7 @@ const ProveedorList = () => {
           </tbody>
         </table>
       </div>
+      <ToastContainer />
     </section>
   );
 };

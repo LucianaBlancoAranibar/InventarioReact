@@ -85,12 +85,20 @@ const ProveedorCreate = () => {
               type="text"
               id="telefono"
               value={telefono}
-              onChange={(e) => setTelefono(e.target.value)}
+              onChange={(e) => {
+                // Permitir solo números y limitar la longitud a 8 caracteres
+                const valor = e.target.value;
+                if (valor === '' || (/^\d+$/.test(valor) && valor.length <= 8)) {
+                  setTelefono(valor);
+                }
+              }}
               className="bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 block w-full"
               placeholder="Ingrese el teléfono del proveedor"
+              maxLength="8"
               required
             />
           </div>
+
           <div className="mb-6">
             <label
               className="block mb-2 text-sm font-medium text-gray-900"
