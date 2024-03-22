@@ -1,30 +1,48 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProveedorCreate = () => {
-  const [nombreProveedor, setNombreProveedor] = useState('');
-  const [telefono, setTelefono] = useState('');
-  const [email, setEmail] = useState('');
-  const [direccionProveedor, setDireccionProveedor] = useState('');
+  const [nombreProveedor, setNombreProveedor] = useState("");
+  const [telefono, setTelefono] = useState("");
+  const [email, setEmail] = useState("");
+  const [direccionProveedor, setDireccionProveedor] = useState("");
+  const navigate = useNavigate();
+
+  const irAListaProveedores = () => {
+    navigate("/ProveedorList"); // Asegúrate de que esta ruta es correcta
+  };
 
   const registrarProveedor = async () => {
     try {
       const respuesta = await axios.post(
-        'https://localhost:7010/api/Proveedors', 
+        "https://localhost:7010/api/Proveedors",
         {
           NombreProveedor: nombreProveedor,
           Telefono: telefono,
           Email: email,
-          DireccionProveedor: direccionProveedor
+          DireccionProveedor: direccionProveedor,
         }
       );
-      console.log('Proveedor registrado:', respuesta.data);
-      setNombreProveedor('');
-      setTelefono('');
-      setEmail('');
-      setDireccionProveedor('');
+      console.log("Proveedor registrado:", respuesta.data);
+      toast.success("Proveedor creado con éxito!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      setNombreProveedor("");
+      setTelefono("");
+      setEmail("");
+      setDireccionProveedor("");
     } catch (error) {
-      console.error('Error al registrar proveedor:', error);
+      console.error("Error al registrar proveedor:", error);
+      toast.error("Error al crear proveedor.");
     }
   };
 
@@ -40,7 +58,10 @@ const ProveedorCreate = () => {
           }}
         >
           <div className="mb-6">
-            <label className="block mb-2 text-sm font-medium text-gray-900" htmlFor="nombreProveedor">
+            <label
+              className="block mb-2 text-sm font-medium text-gray-900"
+              htmlFor="nombreProveedor"
+            >
               Nombre del Proveedor
             </label>
             <input
@@ -54,7 +75,10 @@ const ProveedorCreate = () => {
             />
           </div>
           <div className="mb-6">
-            <label className="block mb-2 text-sm font-medium text-gray-900" htmlFor="telefono">
+            <label
+              className="block mb-2 text-sm font-medium text-gray-900"
+              htmlFor="telefono"
+            >
               Teléfono
             </label>
             <input
@@ -68,7 +92,10 @@ const ProveedorCreate = () => {
             />
           </div>
           <div className="mb-6">
-            <label className="block mb-2 text-sm font-medium text-gray-900" htmlFor="email">
+            <label
+              className="block mb-2 text-sm font-medium text-gray-900"
+              htmlFor="email"
+            >
               Email
             </label>
             <input
@@ -82,7 +109,10 @@ const ProveedorCreate = () => {
             />
           </div>
           <div className="mb-6">
-            <label className="block mb-2 text-sm font-medium text-gray-900" htmlFor="direccionProveedor">
+            <label
+              className="block mb-2 text-sm font-medium text-gray-900"
+              htmlFor="direccionProveedor"
+            >
               Dirección
             </label>
             <input
@@ -95,14 +125,26 @@ const ProveedorCreate = () => {
               required
             />
           </div>
-          <button
-            type="submit"
-            className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-          >
-            Registrar Proveedor
-          </button>
+          <div>
+            <button
+              type="submit"
+              className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            >
+              Registrar Proveedor
+            </button>
+          </div>
+          <div>
+            <button
+              type="button"
+              className="shadow bg-green-500 hover:bg-gray-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+              onClick={irAListaProveedores}
+            >
+              Volver a la Lista
+            </button>
+          </div>
         </form>
       </div>
+      <ToastContainer />
     </section>
   );
 };
