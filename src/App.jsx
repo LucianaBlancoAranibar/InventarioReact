@@ -15,6 +15,8 @@ import FormCategory from './FormCategory';
 import ListProduct from './ListProduct';
 import ProductForm from './ProductForm';
 import ProductEdit from './ProductEdit';
+import ListInventario from './ListInventario';
+import InventarioForm from './InventarioForm';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,6 +37,8 @@ function App() {
         <Route path="/ListProduct" element={<ListProduct />} />
         <Route path="/ProductForm" element={<ProductForm />} />
         <Route path="/ProductEdit/:id" element={<ProductEdit />} />
+        <Route path="/ListInventario" element={<ListInventario />} />
+        <Route path="/InventarioForm" element={<InventarioForm />} />
       </Routes>
     </BrowserRouter>
     </>

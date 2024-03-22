@@ -23,7 +23,7 @@ const FormUbicacion = () => {
     e.preventDefault();
 
     if (!almacenId) {
-      alert("Debe seleccionar un almacén."); // Usar alert para notificar al usuario o implementar otra forma de notificación
+      alert("Debe seleccionar un almacén."); 
       return;
     }
 
@@ -112,4 +112,3 @@ const FormUbicacion = () => {
 };
 
 export default FormUbicacion;
-``

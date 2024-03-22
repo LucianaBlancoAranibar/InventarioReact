@@ -18,15 +18,6 @@ const ListaCategoriesComponent = () => {
     };
     obtenerCategories();
   }, []);
-  const eliminarUbicacion = async (id) => {
-    try {
-      await axios.delete(`https://localhost:7010/api/Ubicacions/${id}`);
-      // Actualizar la lista de almacenes tras la eliminación
-      setCategories(categories.filter((category) => category.categoryId !== id));
-    } catch (error) {
-      console.error("Error al eliminar la categoria:", error);
-    }
-  };
   
   const irACrearUbicacion= () => {
     navigate('/FormCategory'); // Navega a la ruta deseada
