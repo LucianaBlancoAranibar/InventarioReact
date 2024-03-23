@@ -27,6 +27,9 @@ export default function Navigation() {
                 <li>
                     <a href="/ListInventario" class="text-gray-900 dark:text-white hover:underline">Inventario</a>
                 </li>
+                <li>
+                    <a href="/ListCompra" class="text-gray-900 dark:text-white hover:underline">Compra</a>
+                </li>
             </ul>
         </div>
     </div>

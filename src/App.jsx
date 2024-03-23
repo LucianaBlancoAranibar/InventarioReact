@@ -18,6 +18,9 @@ import ProductEdit from './ProductEdit';
 import ListInventario from './ListInventario';
 import InventarioForm from './InventarioForm';
 import InventarioEdit from './InventarioEdit';
+import CompraForm from './CompraForm';
+import ListCompra from './ListCompra';
+import DetalleCompra from './DetalleCompra';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -41,6 +44,9 @@ function App() {
         <Route path="/ListInventario" element={<ListInventario />} />
         <Route path="/InventarioForm" element={<InventarioForm />} />
         <Route path="/InventarioEdit/:inventarioId" element={<InventarioEdit />} />
+        <Route path="/CompraForm" element={<CompraForm />} />
+        <Route path="/ListCompra" element={<ListCompra />} />
+        <Route path="/DetalleCompra/:compraId" element={<DetalleCompra />} />
       </Routes>
     </BrowserRouter>
     </>
