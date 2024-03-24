@@ -88,7 +88,10 @@ const ProveedorCreate = () => {
               onChange={(e) => {
                 // Permitir solo números y limitar la longitud a 8 caracteres
                 const valor = e.target.value;
-                if (valor === '' || (/^\d+$/.test(valor) && valor.length <= 8)) {
+                if (
+                  valor === "" ||
+                  (/^\d+$/.test(valor) && valor.length <= 8)
+                ) {
                   setTelefono(valor);
                 }
               }}

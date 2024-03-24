@@ -13,7 +13,7 @@ const ProveedorEdit = () => {
   const navigate = useNavigate();
 
   const irAListaProveedores = () => {
-    navigate('/ProveedorList'); // Asegúrate de que esta ruta es correcta
+    navigate("/ProveedorList"); // Asegúrate de que esta ruta es correcta
   };
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const ProveedorEdit = () => {
         }
       );
       console.log("Proveedor actualizado:", resultado.data);
-  
+
       // Muestra el mensaje de éxito
       toast.success("Proveedor actualizado con éxito!", {
         position: "top-center",
@@ -61,16 +61,14 @@ const ProveedorEdit = () => {
         draggable: true,
         progress: undefined,
       });
-  
+
       // Espera un momento antes de redirigir para que el usuario vea el mensaje
       setTimeout(() => navigate("/ProveedorList"), 2000);
-  
     } catch (error) {
       console.error("Error al actualizar proveedor:", error);
       toast.error("Error al actualizar proveedor.");
     }
   };
-  
 
   return (
     <div className="edit-proveedor-container max-w-2xl mx-auto mt-10 p-8 shadow-lg rounded-lg">
@@ -107,12 +105,12 @@ const ProveedorEdit = () => {
             value={telefono}
             onChange={(e) => {
               const valor = e.target.value;
-              if (valor === '' || (/^\d+$/.test(valor) && valor.length <= 8)) {
+              if (valor === "" || (/^\d+$/.test(valor) && valor.length <= 8)) {
                 setTelefono(valor);
               }
             }}
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            maxLength="8" 
+            maxLength="8"
             required
           />
         </div>

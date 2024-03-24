@@ -28,11 +28,15 @@ const ProveedorList = () => {
   };
 
   const eliminarProveedor = async (id) => {
-    const confirmar = window.confirm("¿Estás seguro de que deseas eliminar este proveedor?");
+    const confirmar = window.confirm(
+      "¿Estás seguro de que deseas eliminar este proveedor?"
+    );
     if (confirmar) {
       try {
         await axios.delete(`https://localhost:7010/api/Proveedors/${id}`);
-        setProveedores(proveedores.filter((proveedor) => proveedor.proveedorId !== id));
+        setProveedores(
+          proveedores.filter((proveedor) => proveedor.proveedorId !== id)
+        );
         toast.success("Proveedor eliminado con éxito!", {
           position: "top-center",
           autoClose: 5000,

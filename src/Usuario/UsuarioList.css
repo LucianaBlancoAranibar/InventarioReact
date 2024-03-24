@@ -1,0 +1,23 @@
+.usuario-list-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .usuario-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .usuario-table th,
+  .usuario-table td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .usuario-table th {
+    background-color: #f2f2f2;
+  }
+  
