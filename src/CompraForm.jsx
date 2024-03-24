@@ -68,6 +68,9 @@ const CompraForm = () => {
   };
 
   return (
+    <section className="container mx-auto ">
+      <div className="mx-auto max-w-2xl lg:py-16 ">
+        <h2 className="text-2xl font-semibold mb-4">Registrar Compra</h2>
     <form
       onSubmit={handleSubmit}
       className="max-w-md mx-auto mt-8 p-4 bg-gray-100 rounded-lg shadow-md"
@@ -180,6 +183,8 @@ const CompraForm = () => {
         Registrar Compra
       </button>
     </form>
+    </div>
+    </section>
   );
 };
 

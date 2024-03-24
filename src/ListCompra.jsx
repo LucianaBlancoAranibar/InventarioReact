@@ -37,11 +37,19 @@ const ListaCompras = () => {
     fetchCompras();
   }, []);
   const handleVerDetalle = (compraId) => {
-    navigate(`/DetalleCompra/${compraId}`); // Asumiendo que tienes una ruta configurada así
+    navigate(`/DetalleCompra/${compraId}`);
   };
-
+  const irACrearCompra= () => {
+    navigate('/CompraForm'); // Navega a la ruta deseada
+  };
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto mt-8">
+           <button
+        onClick={irACrearCompra}
+        className="mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Crear Compra
+      </button>
       <h2 className="text-2xl font-semibold mb-4">Lista de Compras</h2>
       <div className="overflow-x-auto">
         <table className="min-w-full table-auto">
@@ -50,7 +58,7 @@ const ListaCompras = () => {
               <th className="px-4 py-2 border">Fecha de Compra</th>
               <th className="px-4 py-2 border">Nombre de Usuario</th>
               <th className="px-4 py-2 border">Nombre de Proveedor</th>
-              <th className="px-4 py-2 border">Detalles de Compra</th>
+              {/* <th className="px-4 py-2 border">Detalles de Compra</th> */}
               <th className="px-4 py-2 border">Detalles de Compra</th>
             </tr>
           </thead>
@@ -60,14 +68,7 @@ const ListaCompras = () => {
                 <td className="border px-4 py-2">{new Date(compra.fechaCompra).toLocaleDateString()}</td>
                 <td className="border px-4 py-2">{compra.nombreUsuario || 'No Disponible'}</td>
                 <td className="border px-4 py-2">{compra.nombreProveedor || 'No Disponible'}</td>
-                <td className="border px-4 py-2">
-                  {compra.detalleCompras.map((detalle, detalleIndex) => (
-                    <div key={detalleIndex}>
-                      Cantidad: {detalle.cantidad}
-                      {/* Aquí también necesitarías resolver los nombres de los productos por su ID */}
-                    </div>
-                  ))}
-                </td>
+              
                 <td className="border px-4 py-2 text-center">
                   <button
                     onClick={() => handleVerDetalle(compra.compraId)}
