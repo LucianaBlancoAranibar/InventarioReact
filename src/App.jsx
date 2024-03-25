@@ -26,6 +26,13 @@ import PedidoList from './PedidoList';
 import ExistenciaReporte from './ExistenciaReporte'
 import UbicacionReporte from './UbicacionReporte'
 import MovimientoReporte from './MovimientoReporte'
+import ReportePedidos from './ReportePedidos ';
+import ProveedorCreate from "./ProveedorCreate";
+import ProveedorList from "./ProveedorList";
+import ProveedorEdit from "./ProveedorEdit";
+import ReporteProductoPedido from "./ReporteProductoPedido";
+import ReporteVentasCategoria from "./ReporteVentasCategoria";
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -53,9 +60,15 @@ function App() {
         <Route path="/DetalleCompra/:compraId" element={<DetalleCompra />} />
         <Route path="/PedidoForm" element={<PedidoForm />} />
         <Route path="/PedidoList" element={<PedidoList />} />
+        <Route path="/ProveedorCreate" element={<ProveedorCreate />} />
+        <Route path="/ProveedorList" element={<ProveedorList />} />
+        <Route path="/ProveedorEdit" element={<ProveedorEdit />} />
         <Route path="/ExistenciaReporte" element={<ExistenciaReporte />} />
         <Route path="/UbicacionReporte" element={<UbicacionReporte />} />
         <Route path="/MovimientoReporte" element={<MovimientoReporte />} />
+        <Route path="/ReportePedidos" element={<ReportePedidos />} />
+        <Route path="/ReporteProductoPedido" element={<ReporteProductoPedido />} />
+        <Route path="/ReporteVentasCategoria" element={<ReporteVentasCategoria />} />
       </Routes>
     </BrowserRouter>
     </>
