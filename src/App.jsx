@@ -21,7 +21,11 @@ import InventarioEdit from './InventarioEdit';
 import CompraForm from './CompraForm';
 import ListCompra from './ListCompra';
 import DetalleCompra from './DetalleCompra';
-
+import PedidoForm from './PedidoForm';
+import PedidoList from './PedidoList';
+import ExistenciaReporte from './ExistenciaReporte'
+import UbicacionReporte from './UbicacionReporte'
+import MovimientoReporte from './MovimientoReporte'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -47,6 +51,11 @@ function App() {
         <Route path="/CompraForm" element={<CompraForm />} />
         <Route path="/ListCompra" element={<ListCompra />} />
         <Route path="/DetalleCompra/:compraId" element={<DetalleCompra />} />
+        <Route path="/PedidoForm" element={<PedidoForm />} />
+        <Route path="/PedidoList" element={<PedidoList />} />
+        <Route path="/ExistenciaReporte" element={<ExistenciaReporte />} />
+        <Route path="/UbicacionReporte" element={<UbicacionReporte />} />
+        <Route path="/MovimientoReporte" element={<MovimientoReporte />} />
       </Routes>
     </BrowserRouter>
     </>

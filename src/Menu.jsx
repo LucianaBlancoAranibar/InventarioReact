@@ -30,6 +30,18 @@ export default function Navigation() {
                 <li>
                     <a href="/ListCompra" class="text-gray-900 dark:text-white hover:underline">Compra</a>
                 </li>
+                <li>
+                    <a href="/PedidoList" class="text-gray-900 dark:text-white hover:underline">Pedido</a>
+                </li>
+                <li>
+                    <a href="/ExistenciaReporte" class="text-gray-900 dark:text-white hover:underline">ExistenciaReporte</a>
+                </li>
+                <li>
+                    <a href="/UbicacionReporte" class="text-gray-900 dark:text-white hover:underline">Ubicacion reporte</a>
+                </li>
+                <li>
+                    <a href="/MovimientoReporte" class="text-gray-900 dark:text-white hover:underline">MovimientoReporte</a>
+                </li>
             </ul>
         </div>
     </div>
