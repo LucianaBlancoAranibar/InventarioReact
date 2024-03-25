@@ -31,8 +31,8 @@ const ListInventario = () => {
     navigate("/InventarioForm"); // Navega a la ruta deseada
   };
   return (
-    <section className="container mx-auto mt-8">
-      <div className="mx-auto max-w-2xl lg:py-16">
+    <section className="container mx-auto ">
+      <div className="mx-auto max-w-2xl ">
         <h2 className="text-2xl font-semibold mb-4">Registrar Producto</h2>
         <button
           onClick={irACrearInventario}
