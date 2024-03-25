@@ -5,8 +5,8 @@ Chart.register(ArcElement, Tooltip, Legend);
 
 
 const PedidoTable = ({ data }) => (
-  <table className="min-w-full leading-normal">
-    <thead>
+  <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead className='bg-gray-800 text-white'>
       <tr className="bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
         <th className="py-3 px-6 text-left">Fecha</th>
         <th className="py-3 px-6 text-left">Cantidad de Pedidos</th>
@@ -63,7 +63,7 @@ const ReportePedidos = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-xl font-semibold mb-4">Reporte de Pedidos</h1>
+      <h1 className="text-2xl font-bold text-center mb-6">Reporte de Pedidos</h1>
       <div className="mb-8">
         <PedidoTable data={data} />
       </div>

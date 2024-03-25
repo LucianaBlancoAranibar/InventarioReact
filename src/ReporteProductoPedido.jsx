@@ -42,10 +42,10 @@ const ReporteProductoMasVendido = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-semibold mb-4">Productos Más Vendidos</h2>
+      <h2 className="text-2xl font-bold text-center mb-6">Productos Más Vendidos</h2>
       <div className="mb-8">
         <table className="min-w-full table-auto">
-          <thead className="bg-purple-200">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th className="px-4 py-2">Producto</th>
               <th className="px-4 py-2">Cantidad Vendida</th>

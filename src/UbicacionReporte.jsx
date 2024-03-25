@@ -108,7 +108,7 @@ const UbicacionReporte = () => {
 
       <div className="overflow-x-auto rounded-lg shadow">
         <table className="min-w-full bg-white">
-          <thead className="bg-gray-800 text-white">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th className="text-left py-3 px-4 uppercase font-semibold text-sm">
                 Producto
