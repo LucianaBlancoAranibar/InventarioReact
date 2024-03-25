@@ -32,6 +32,7 @@ import ProveedorList from "./ProveedorList";
 import ProveedorEdit from "./ProveedorEdit";
 import ReporteProductoPedido from "./ReporteProductoPedido";
 import ReporteVentasCategoria from "./ReporteVentasCategoria";
+import Home from "./Home"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -41,6 +42,7 @@ function App() {
       <BrowserRouter>
       <Navigation />
       <Routes>
+      <Route path="/" element={<Home />} />
         <Route path="/AlmacensComponent" element={<AlmacensComponent />} />
         <Route path="/ListaAlmacenesComponent" element={<ListaAlmacenesComponent />} />
         <Route path="/AlmacenEdit/:id" element={<AlmacenEdit />} />

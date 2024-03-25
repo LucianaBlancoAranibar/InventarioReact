@@ -9,7 +9,7 @@ export default function Navigation() {
             alt="Flowbite Logo"
           />
           <span className="text-xl font-semibold dark:text-white">
-            Flowbite
+          InnovElectronics
           </span>
         </a>
         <div className="hidden md:flex space-x-10">
