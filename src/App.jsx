@@ -33,10 +33,17 @@ import ProveedorEdit from "./ProveedorEdit";
 import ReporteProductoPedido from "./ReporteProductoPedido";
 import ReporteVentasCategoria from "./ReporteVentasCategoria";
 import Home from "./Home"
+import LoginForm from './LoginForm';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   const [count, setCount] = useState(0)
+  const navigate = useNavigate(); // Hook para la navegación
 
+  const handleLoginSuccess = (token) => {
+    localStorage.setItem('token', token);
+    navigate('/Home'); // Redirige al usuario al dashboard después del inicio de sesión
+  };
   return (
     <>
       <BrowserRouter>
@@ -71,6 +78,7 @@ function App() {
         <Route path="/ReportePedidos" element={<ReportePedidos />} />
         <Route path="/ReporteProductoPedido" element={<ReporteProductoPedido />} />
         <Route path="/ReporteVentasCategoria" element={<ReporteVentasCategoria />} />
+        <LoginForm onLoginSuccess={handleLoginSuccess} />
       </Routes>
     </BrowserRouter>
     </>
