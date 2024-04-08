@@ -10,8 +10,7 @@ export default function Home() {
             Bienvenido a InnovElectronics
           </h1>
           <p className="text-center text-gray-600 mt-4">
-            Tu solución todo en uno para gestionar [actividad principal de la
-            app].
+            Tu solución todo en uno para gestionar el inventario.
           </p>
         </div>
       </header>
@@ -21,21 +20,21 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow">
-              <h2 className="text-2xl font-bold mb-2">Característica 1</h2>
+              <h2 className="text-2xl font-bold mb-2">Registro de Compras a Proveedores</h2>
               <p className="text-gray-700">
-                Descripción breve de lo que hace esta característica.
+              Gestión de Compras Eficiente: Esta característica central permite a los usuarios registrar y gestionar las compras realizadas a proveedores de manera eficaz. Incluye la capacidad de crear nuevas órdenes de compra, especificando detalles como los productos adquiridos, cantidades, precios, y el proveedor específico. 
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow">
-              <h2 className="text-2xl font-bold mb-2">Característica 2</h2>
+              <h2 className="text-2xl font-bold mb-2">Gestión de Pedidos</h2>
               <p className="text-gray-700">
-                Descripción breve de lo que hace esta característica.
+              El usuario pueden visualizar los pedidos en tiempo real, actualizar el estado de los pedidos (como pendiente, en preparación, enviado), y comunicarse con los clientes para informarles sobre el estado de sus compras. Esta característica busca optimizar el proceso de cumplimiento de pedidos, mejorando la experiencia del cliente y la eficiencia operativa.
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow">
-              <h2 className="text-2xl font-bold mb-2">Característica 3</h2>
+              <h2 className="text-2xl font-bold mb-2">Control de Inventario Relacionado con Compras y Pedidos</h2>
               <p className="text-gray-700">
-                Descripción breve de lo que hace esta característica.
+              Sincronización de Inventario con Actividades de Compra y Pedido: Este aspecto del sistema asegura que el inventario se actualice automáticamente basado en las compras a proveedores y los pedidos realizados por los clientes. Cada compra registrada incrementa el inventario disponible, mientras que cada pedido realizado lo reduce.
               </p>
             </div>
           </div>
@@ -49,7 +48,7 @@ export default function Home() {
             ¿Listo para comenzar?
           </h2>
           <p className="text-white text-center mt-4">
-           +A TRABAJAR
+           A TRABAJAR
           </p>
           
         </div>

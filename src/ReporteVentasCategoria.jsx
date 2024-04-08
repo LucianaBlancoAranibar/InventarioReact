@@ -24,7 +24,7 @@ const ReporteVentasCategoria = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h2 className="text-xl font-semibold mb-4">Reporte de Ventas por Categoría</h2>
+      <h2 className="text-2xl font-bold text-center mb-6">Reporte de Ventas por Categoría</h2>
       <Bar data={data} />
     </div>
   );

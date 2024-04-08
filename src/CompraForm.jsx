@@ -66,16 +66,17 @@ const CompraForm = () => {
       console.error("Error al registrar la compra:", error);
     }
   };
-
+  const eliminarDetalle = (index) => {
+    setDetalleCompras(detalleCompras.filter((_, i) => i !== index));
+  };
+  
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-md mx-auto mt-8 p-4 bg-gray-100 rounded-lg shadow-md"
-    >
+    <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-4">
+      <h2 className="text-2xl font-semibold mb-4">Registro de Compra</h2>
       <div className="mb-4">
         <label
           htmlFor="fechaCompra"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-gray-700 text-sm font-bold mb-2"
         >
           Fecha y Hora de Compra
         </label>
@@ -85,14 +86,14 @@ const CompraForm = () => {
           value={fechaCompra}
           onChange={(e) => setFechaCompra(e.target.value)}
           required
-          className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
 
       <div className="mb-4">
         <label
           htmlFor="usuarioId"
-          className="block text-sm font-medium text-gray-700"
+          className="block text-gray-700 text-sm font-bold mb-2"
         >
           ID de Usuario
         </label>
@@ -103,7 +104,7 @@ const CompraForm = () => {
           onChange={(e) => setUsuarioId(e.target.value)}
           placeholder="Ingrese el ID de Usuario"
           required
-          className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
       <div className="mb-4">
@@ -118,7 +119,7 @@ const CompraForm = () => {
           value={proveedorId}
           onChange={(e) => setProveedorId(e.target.value)}
           required
-          className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
+          className="block text-gray-700 text-sm font-bold mb-2"
         >
           <option value="">Selecciona un proveedor</option>
           {proveedores.map((proveedor) => (
@@ -132,7 +133,7 @@ const CompraForm = () => {
         <div key={index} className="mb-4">
           <label
             htmlFor={`productoId${index}`}
-            className="block text-sm font-medium text-gray-700"
+            className="block text-gray-700 text-sm font-bold mb-2"
           >
             Producto {index + 1}
           </label>
@@ -144,7 +145,7 @@ const CompraForm = () => {
                 handleDetalleChange(index, "productoId", e.target.value)
               }
               required
-              className="flex-1 mr-2 border-gray-300 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
+              className="shadow border rounded py-2 px-3 text-gray-700 mr-2"
             >
               <option value="">Selecciona un producto</option>
               {productos.map((producto) => (
@@ -161,15 +162,24 @@ const CompraForm = () => {
               }
               placeholder="Cantidad"
               required
-              className="flex-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-400 focus:border-blue-400"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
+             {detalleCompras.length > 1 && (
+              <button
+                type="button"
+                onClick={() => eliminarDetalle(index)}
+                className="ml-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Eliminar
+              </button>
+            )}
           </div>
         </div>
       ))}
       <button
         type="button"
         onClick={agregarDetalleCompra}
-        className="block w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md mb-4"
+        className="mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
       >
         Agregar Producto
       </button>
