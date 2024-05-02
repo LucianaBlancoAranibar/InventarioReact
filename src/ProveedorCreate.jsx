@@ -18,7 +18,7 @@ const ProveedorCreate = () => {
   const registrarProveedor = async () => {
     try {
       const respuesta = await axios.post(
-        "https://localhost:7010/api/Proveedors",
+        "https://localhost:5001/api/Proveedors",
         {
           NombreProveedor: nombreProveedor,
           Telefono: telefono,

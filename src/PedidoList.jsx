@@ -8,7 +8,7 @@ const ListaPedidos = () => {
   useEffect(() => {
     const fetchPedidos = async () => {
       try {
-        const response = await axios.get('https://localhost:7010/api/Pedidoes?_=${new Date().getTime()}');
+        const response = await axios.get('https://localhost:5001/api/Pedidoes?_=${new Date().getTime()}');
         setPedidos(response.data);
       } catch (error) {
         console.error('Error al obtener los pedidos:', error);
@@ -20,7 +20,7 @@ const ListaPedidos = () => {
 
   const cancelarPedido = async (id) => {
     try {
-      await axios.put(`https://localhost:7010/api/Pedidoes/Cancelar/${id}`);
+      await axios.put(`https://localhost:5001/api/Pedidoes/Cancelar/${id}`);
       const updatedPedidos = pedidos.map(pedido => {
         if (pedido.pedidoId === id) {
           return { ...pedido, estado: 3 };

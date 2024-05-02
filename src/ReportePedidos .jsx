@@ -55,7 +55,7 @@ const ReportePedidos = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('https://localhost:7010/reporte-pedidos')
+    fetch('https://localhost:5001/reporte-pedidos')
       .then(response => response.json())
       .then(setData)
       .catch(console.error);

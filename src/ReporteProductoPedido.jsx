@@ -11,7 +11,7 @@ const ReporteProductoMasVendido = () => {
 
   useEffect(() => {
     // Reemplaza la URL con la de tu API
-    fetch('https://localhost:7010/reporte-producto-mas-vendido')
+    fetch('https://localhost:5001/reporte-producto-mas-vendido')
       .then(response => response.json())
       .then(data => setProductos(data))
       .catch(error => console.error('Error al obtener los datos:', error));

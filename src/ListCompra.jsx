@@ -9,14 +9,14 @@ const ListaCompras = () => {
     const fetchCompras = async () => {
       try {
         // Obtener las compras
-        const { data } = await axios.get('https://localhost:7010/api/Compras');
+        const { data } = await axios.get('https://localhost:5001/api/Compras');
 
         // Mapear las compras y enriquecerlas con los nombres de usuarios y proveedores
         const comprasConNombres = await Promise.all(data.map(async (compra) => {
           // Suponiendo que tienes endpoints como /api/Usuarios/{id} y /api/Proveedores/{id}
           const [usuarioRes, proveedorRes] = await Promise.all([
-            axios.get(`https://localhost:7010/api/Usuarios/${compra.usuarioId}`),
-            axios.get(`https://localhost:7010/api/Proveedors/${compra.proveedorId}`)
+            axios.get(`https://localhost:5001/api/Usuarios/${compra.usuarioId}`),
+            axios.get(`https://localhost:5001/api/Proveedors/${compra.proveedorId}`)
           ]);
 
           // Retorna la compra con los nombres de usuario y proveedor

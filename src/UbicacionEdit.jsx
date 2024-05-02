@@ -11,7 +11,7 @@ const UbicacionEdit = () => {
   useEffect(() => {
     const cargarUbicacion = async () => {
       try {
-        const respuesta = await axios.get(`https://localhost:7010/api/Ubicaciones/${id}`);
+        const respuesta = await axios.get(`https://localhost:5001/api/Ubicaciones/${id}`);
         setNombreUbicacion(respuesta.data.NombreUbicacion);
         setDescripcion(respuesta.data.Descripcion);
       } catch (error) {
@@ -27,7 +27,7 @@ const UbicacionEdit = () => {
   const editarUbicacion = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://localhost:7010/api/Ubicaciones/${id}`, {
+      await axios.put(`https://localhost:5001/api/Ubicaciones/${id}`, {
         NombreUbicacion: nombreUbicacion,
         Descripcion: descripcion,
       });

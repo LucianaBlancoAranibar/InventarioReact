@@ -12,7 +12,7 @@ const EditInventario = () => {
   useEffect(() => {
     const cargarInventario = async () => {
       try {
-        const { data } = await axios.get(`https://localhost:7010/api/Inventarios/${inventarioId}`);
+        const { data } = await axios.get(`https://localhost:5001/api/Inventarios/${inventarioId}`);
         setCantidad(data.cantidad);
         setNombreProducto(data.nombreProducto );
         setNombreUbicacion(data.nombreUbicacion );
@@ -34,7 +34,7 @@ const EditInventario = () => {
 
     // Asegúrate de que estás enviando el ID y la Cantidad correctamente
     try {
-        const response = await axios.put(`https://localhost:7010/api/Inventarios/${inventarioId}`, {
+        const response = await axios.put(`https://localhost:5001/api/Inventarios/${inventarioId}`, {
             inventarioId: parseInt(inventarioId, 10), // Asegúrate de convertir a entero si es necesario
             cantidad: parseInt(cantidad, 10) // Solo necesitas enviar la cantidad
         });

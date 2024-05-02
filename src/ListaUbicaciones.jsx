@@ -9,7 +9,7 @@ const ListaUbicacionesComponent = () => {
   useEffect(() => {
     const obtenerUbicaciones = async () => {
       try {
-        const respuesta = await axios.get("https://localhost:7010/api/Ubicacions");
+        const respuesta = await axios.get("https://localhost:5001/api/Ubicacions");
         setUbicaciones(respuesta.data);
         console.log(respuesta.data);
       } catch (error) {
@@ -20,7 +20,7 @@ const ListaUbicacionesComponent = () => {
   }, []);
   const eliminarUbicacion = async (id) => {
     try {
-      await axios.delete(`https://localhost:7010/api/Ubicacions/${id}`);
+      await axios.delete(`https://localhost:5001/api/Ubicacions/${id}`);
       // Actualizar la lista de almacenes tras la eliminación
       setAlmacenes(ubicaciones.filter((ubicacion) => ubicacion.ubicacionId !== id));
     } catch (error) {

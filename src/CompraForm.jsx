@@ -13,7 +13,7 @@ const CompraForm = () => {
   // Función para obtener la lista de proveedores
   const fetchProveedores = async () => {
     try {
-      const response = await axios.get("https://localhost:7010/api/Proveedors");
+      const response = await axios.get("https://localhost:5001/api/Proveedors");
       setProveedores(response.data);
     } catch (error) {
       console.error("Error al obtener los proveedores:", error);
@@ -22,7 +22,7 @@ const CompraForm = () => {
 
   const fetchProductos = async () => {
     try {
-      const response = await axios.get("https://localhost:7010/api/Productoes");
+      const response = await axios.get("https://localhost:5001/api/Productoes");
       setProductos(response.data);
     } catch (error) {
       console.error("Error al obtener los productos:", error);
@@ -51,7 +51,7 @@ const CompraForm = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("https://localhost:7010/api/Compras", {
+      const response = await axios.post("https://localhost:5001/api/Compras", {
         fechaCompra,
         usuarioId: parseInt(usuarioId, 10),
         proveedorId: parseInt(proveedorId, 10),

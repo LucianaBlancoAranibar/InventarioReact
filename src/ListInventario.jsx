@@ -10,7 +10,7 @@ const ListInventario = () => {
     const obtenerInventarios = async () => {
       try {
         const respuesta = await axios.get(
-          "https://localhost:7010/api/Inventarios/"
+          "https://localhost:5001/api/Inventarios/"
         );
         setInventarios(respuesta.data);
         console.log(respuesta.data);
@@ -22,7 +22,7 @@ const ListInventario = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    await axios.delete(`https://localhost:7010/api/Inventarios/${id}`);
+    await axios.delete(`https://localhost:5001/api/Inventarios/${id}`);
     setInventarios(
       inventarios.filter((inventario) => inventario.inventarioId !== id)
     );

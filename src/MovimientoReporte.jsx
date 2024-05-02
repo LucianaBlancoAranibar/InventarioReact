@@ -4,7 +4,7 @@ const InventoryReport = () => {
   const [movements, setMovements] = useState([]);
 
   useEffect(() => {
-    fetch('https://localhost:7010/historial-movimientos')
+    fetch('https://localhost:5001/historial-movimientos')
       .then(response => response.json())
       .then(data => setMovements(data))
       .catch(error => console.error('Error fetching data: ', error));

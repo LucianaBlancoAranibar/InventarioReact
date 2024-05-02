@@ -21,7 +21,7 @@ const ProveedorEdit = () => {
     const cargarProveedor = async () => {
       try {
         const resultado = await axios.get(
-          `https://localhost:7010/api/Proveedors/${id}`
+          `https://localhost:5001/api/Proveedors/${id}`
         );
         const proveedor = resultado.data;
         setNombreProveedor(proveedor.nombreProveedor);
@@ -40,7 +40,7 @@ const ProveedorEdit = () => {
     e.preventDefault();
     try {
       const resultado = await axios.put(
-        `https://localhost:7010/api/Proveedors/${id}`,
+        `https://localhost:5001/api/Proveedors/${id}`,
         {
           ProveedorId: parseInt(id), // Asegúrate de que esto se envía y sea un número
           NombreProveedor: nombreProveedor,

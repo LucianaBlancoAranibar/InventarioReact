@@ -10,7 +10,7 @@ const FormCategory = () => {
     e.preventDefault();
 
     try {
-      const respuesta = await axios.post("https://localhost:7010/api/Categoriums", {
+      const respuesta = await axios.post("https://localhost:5001/api/Categoriums", {
         nombreCategoria: nombre,
         Descripcion: descripcion,
     

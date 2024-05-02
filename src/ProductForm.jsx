@@ -14,7 +14,7 @@ const FormProduct = () => {
       // Cargar las categorías al montar el componente
       const obtenerCategorias = async () => {
         try {
-          const respuesta = await axios.get("https://localhost:7010/api/Categoriums");
+          const respuesta = await axios.get("https://localhost:5001/api/Categoriums");
           setCategorias(respuesta.data); // Guarda las categorías obtenidas en el estado
         } catch (error) {
           console.error("Error al obtener categorías:", error);
@@ -38,7 +38,7 @@ const FormProduct = () => {
       }
   
       try {
-        const respuesta = await axios.post("https://localhost:7010/api/Productoes", formData, {
+        const respuesta = await axios.post("https://localhost:5001/api/Productoes", formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }

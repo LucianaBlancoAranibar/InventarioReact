@@ -15,7 +15,7 @@ const EditProduct = () => {
     useEffect(() => {
         const cargarProduct = async () => {
           try {
-            const respuesta = await axios.get(`https://localhost:7010/api/Productoes/${id}`);
+            const respuesta = await axios.get(`https://localhost:5001/api/Productoes/${id}`);
             // Asegúrate de que los campos en `respuesta.data` coincidan con tu API
             setNombreProducto(respuesta.data.nombreProducto);
             setDescripcion(respuesta.data.descripcion);
@@ -35,7 +35,7 @@ const EditProduct = () => {
       // Cargar las categorías al montar el componente
       const obtenerCategorias = async () => {
         try {
-          const respuesta = await axios.get("https://localhost:7010/api/Categoriums");
+          const respuesta = await axios.get("https://localhost:5001/api/Categoriums");
           setCategorias(respuesta.data); // Guarda las categorías obtenidas en el estado
         } catch (error) {
           console.error("Error al obtener categorías:", error);
@@ -59,7 +59,7 @@ const EditProduct = () => {
       }
   
       try {
-        const respuesta = await axios.put(`https://localhost:7010/api/Productoes/${id}`, formData, {
+        const respuesta = await axios.put(`https://localhost:5001/api/Productoes/${id}`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }

@@ -5,7 +5,7 @@ const ReporteVentasCategoria = () => {
   const [reporteDatos, setReporteDatos] = useState([]);
 
   useEffect(() => {
-    fetch('https://localhost:7010/reporte-ventas-categoria')
+    fetch('https://localhost:5001/reporte-ventas-categoria')
       .then(response => response.json())
       .then(data => setReporteDatos(data))
       .catch(console.error);

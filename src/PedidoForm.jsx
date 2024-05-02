@@ -15,7 +15,7 @@ const RegistroPedido = () => {
     const fetchProductos = async () => {
       try {
         const response = await axios.get(
-          "https://localhost:7010/api/Productoes"
+          "https://localhost:5001/api/Productoes"
         );
         setProductos(response.data);
       } catch (error) {
@@ -71,7 +71,7 @@ const RegistroPedido = () => {
 
     try {
       const response = await axios.post(
-        "https://localhost:7010/api/Pedidoes",
+        "https://localhost:5001/api/Pedidoes",
         pedidoConIds
       );
       console.log("Pedido registrado:", response.data);

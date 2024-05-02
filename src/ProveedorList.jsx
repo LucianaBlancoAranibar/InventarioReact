@@ -18,7 +18,7 @@ const ProveedorList = () => {
           }
         };
  
-        const respuesta = await axios.get("https://localhost:7010/api/Proveedors", config);
+        const respuesta = await axios.get("https://localhost:5001/api/Proveedors", config);
         setProveedores(respuesta.data);
       } catch (error) {
         if (error.response) {

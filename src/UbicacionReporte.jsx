@@ -15,7 +15,7 @@ const UbicacionReporte = () => {
   const fetchReporte = async () => {
     try {
       const response = await axios.get(
-        `https://localhost:7010/reporte-ubicacion`,
+        `https://localhost:5001/reporte-ubicacion`,
         {
           params: { filtroAdicional, agrupacion },
         }

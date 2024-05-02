@@ -1,6 +1,19 @@
-import React from 'react';
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function Navigation() {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("userToken"); // Elimina el token del localStorage
+    localStorage.removeItem("userRole"); // Elimina el rol del localStorage
+    navigate("/"); // Redirige al usuario a la página de inicio de sesión
+  };
+  const location = useLocation();
+
+  if (location.pathname === "/") {
+    return null; // No renderiza nada si la ruta es /login
+  }
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900 shadow-md">
       <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
@@ -11,7 +24,7 @@ export default function Navigation() {
             alt="Flowbite Logo"
           />
           <span className="text-xl font-semibold dark:text-white">
-          InnovElectronics
+            InnovElectronics
           </span>
         </a>
         <div className="hidden md:flex space-x-10">
@@ -39,7 +52,7 @@ export default function Navigation() {
               <li className="rounded-md px-3 py-1 hover:bg-gray-100">
                 <a href="/ListaAlmacenesComponent">Almacenes</a>
               </li>
-             
+
               <li className="rounded-sm px-3 py-1 hover:bg-gray-100">
                 <a href="/ListaUbicaciones">Ubicaciones</a>
               </li>
@@ -52,7 +65,6 @@ export default function Navigation() {
               <li className="rounded-sm px-3 py-1 hover:bg-gray-100">
                 <a href="/ListInventario">Inventario</a>
               </li>
-
             </ul>
           </div>
           {/* Grupo de Operaciones */}
@@ -125,7 +137,19 @@ export default function Navigation() {
               </li>
             </ul>
           </div>
-
+          <div className="group inline-block">
+           
+              <li className="rounded-sm px-3 py-1 hover:bg-gray-100">
+                <a href="/RegisterForm">Registro</a>
+              </li>
+           
+          </div>
+          <button
+            onClick={handleLogout}
+            className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-700 transition duration-300"
+          >
+            Cerrar Sesión
+          </button>
         </div>
       </div>
     </nav>

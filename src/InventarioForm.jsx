@@ -13,8 +13,8 @@ const FormInventario = () => {
   useEffect(() => {
     const cargarDatos = async () => {
       try {
-        const respuestaProductos = await axios.get("https://localhost:7010/api/Productoes");
-        const respuestaUbicaciones = await axios.get("https://localhost:7010/api/Ubicacions");
+        const respuestaProductos = await axios.get("https://localhost:5001/api/Productoes");
+        const respuestaUbicaciones = await axios.get("https://localhost:5001/api/Ubicacions");
         setProductos(respuestaProductos.data);
         setUbicaciones(respuestaUbicaciones.data);
       } catch (error) {
@@ -52,7 +52,7 @@ const FormInventario = () => {
         NombreUbicacion: ubicacionSeleccionada.nombreUbicacion,
       };
   
-      const respuesta = await axios.post("https://localhost:7010/api/Inventarios", inventarioParaEnviar);
+      const respuesta = await axios.post("https://localhost:5001/api/Inventarios", inventarioParaEnviar);
       console.log("Inventario creado:", respuesta.data);
       // Resto del código...
     } catch (error) {

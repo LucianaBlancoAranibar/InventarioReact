@@ -12,7 +12,7 @@ const DetalleCompra = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          `https://localhost:7010/api/Compras/${compraId}`
+          `https://localhost:5001/api/Compras/${compraId}`
         );
         setCompra(response.data);
       } catch (error) {

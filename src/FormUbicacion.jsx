@@ -10,7 +10,7 @@ const FormUbicacion = () => {
   useEffect(() => {
     const obtenerAlmacenes = async () => {
       try {
-        const respuesta = await axios.get("https://localhost:7010/api/Almacens");
+        const respuesta = await axios.get("https://localhost:5001/api/Almacens");
         setAlmacenes(respuesta.data);
       } catch (error) {
         console.error("Error al obtener almacenes:", error);
@@ -28,7 +28,7 @@ const FormUbicacion = () => {
     }
 
     try {
-      const respuesta = await axios.post("https://localhost:7010/api/Ubicacions", {
+      const respuesta = await axios.post("https://localhost:5001/api/Ubicacions", {
         NombreUbicacion: nombre,
         Descripcion: descripcion,
         AlmacenId: parseInt(almacenId, 10),

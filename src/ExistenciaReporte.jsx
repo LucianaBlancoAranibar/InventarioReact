@@ -69,7 +69,7 @@ const InventarioReporte = () => {
     const obtenerReporteInventario = async () => {
       try {
         const response = await axios.get(
-          "https://localhost:7010/reporte-inventario"
+          "https://localhost:5001/reporte-inventario"
         );
         setReporteInventario(response.data);
       } catch (error) {
@@ -99,7 +99,7 @@ const InventarioReporte = () => {
     const cargarAlmacenes = async () => {
       try {
         const respuesta = await axios.get(
-          "https://localhost:7010/api/Almacens"
+          "https://localhost:5001/api/Almacens"
         );
         setAlmacenes(respuesta.data);
       } catch (error) {
@@ -110,7 +110,7 @@ const InventarioReporte = () => {
     const cargarCategorias = async () => {
       try {
         const respuesta = await axios.get(
-          "https://localhost:7010/api/Categoriums"
+          "https://localhost:5001/api/Categoriums"
         );
         setCategorias(respuesta.data);
       } catch (error) {
@@ -125,18 +125,18 @@ const InventarioReporte = () => {
 
   const cargarReporteInventario = async () => {
     const response = await axios.get(
-      "https://localhost:7010/reporte-inventario"
+      "https://localhost:5001/reporte-inventario"
     );
     return response.data;
   };
 
   const cargarAlmacenes = async () => {
-    const respuesta = await axios.get("https://localhost:7010/api/Almacens");
+    const respuesta = await axios.get("https://localhost:5001/api/Almacens");
     return respuesta.data.map((almacen) => ({ ...almacen, selected: false }));
   };
 
   const cargarCategorias = async () => {
-    const respuesta = await axios.get("https://localhost:7010/api/Categoriums");
+    const respuesta = await axios.get("https://localhost:5001/api/Categoriums");
     return respuesta.data.map((categoria) => ({
       ...categoria,
       selected: false,

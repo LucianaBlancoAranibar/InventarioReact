@@ -10,7 +10,7 @@ const ListaProductsComponent = () => {
   useEffect(() => {
     const obtenerProducts = async () => {
       try {
-        const respuesta = await axios.get("https://localhost:7010/api/Productoes");
+        const respuesta = await axios.get("https://localhost:5001/api/Productoes");
         setProducts(respuesta.data);
       } catch (error) {
         console.error("Error al obtener products:", error);
@@ -25,7 +25,7 @@ const ListaProductsComponent = () => {
 
   const eliminarProduct = async (id) => {
     try {
-      await axios.delete(`https://localhost:7010/api/Productoes/${id}`);
+      await axios.delete(`https://localhost:5001/api/Productoes/${id}`);
       setProducts(products.filter((product) => product.productoId !== id));
     } catch (error) {
       console.error("Error al eliminar el producto:", error);
@@ -74,7 +74,7 @@ const ListaProductsComponent = () => {
               <td className="border px-4 py-2">{product.precioUnitario}</td>
               <td className="border px-4 py-2">{product.costo}</td>
               <td className="border px-4 py-2">
-                <img src={`https://localhost:7010/Image/${product.imagen}`} alt={product.nombreProducto} style={{ width: "100px" }} />
+                <img src={`https://localhost:5001/Image/${product.imagen}`} alt={product.nombreProducto} style={{ width: "100px" }} />
               </td>
               <td className="border px-4 py-2">{product.categoriaId}</td>
               <td className="border px-4 py-2">

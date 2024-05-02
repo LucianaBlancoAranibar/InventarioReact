@@ -9,7 +9,7 @@ const ListaCategoriesComponent = () => {
   useEffect(() => {
     const obtenerCategories = async () => {
       try {
-        const respuesta = await axios.get("https://localhost:7010/api/Categoriums");
+        const respuesta = await axios.get("https://localhost:5001/api/Categoriums");
         setCategories(respuesta.data);
         console.log(respuesta.data);
       } catch (error) {
@@ -24,7 +24,7 @@ const ListaCategoriesComponent = () => {
   };
   const eliminarCategory= async (id) => {
     try {
-      await axios.delete(`https://localhost:7010/api/Categoriums/${id}`);
+      await axios.delete(`https://localhost:5001/api/Categoriums/${id}`);
       // Actualizar la lista de almacenes tras la eliminación
       setCategories(categories.filter((category) => category.categoriaId !== id));
     } catch (error) {
