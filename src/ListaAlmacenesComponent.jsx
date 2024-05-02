@@ -12,7 +12,7 @@ const ListaAlmacenesComponent = () => {
   useEffect(() => {
     const obtenerAlmacenes = async () => {
       try {
-        const respuesta = await axios.get("https://localhost:7010/api/Almacens");
+        const respuesta = await axios.get("https://localhost:5001/api/Almacens");
         setAlmacenes(respuesta.data);
       } catch (error) {
         console.error("Error al obtener almacenes:", error);
@@ -23,7 +23,7 @@ const ListaAlmacenesComponent = () => {
   }, []);
   const eliminarAlmacen = async (id) => {
     try {
-      await axios.delete(`https://localhost:7010/api/Almacens/${id}`);
+      await axios.delete(`https://localhost:5001/api/Almacens/${id}`);
       // Actualizar la lista de almacenes tras la eliminación
       setAlmacenes(almacenes.filter((almacen) => almacen.almacenId !== id));
     } catch (error) {

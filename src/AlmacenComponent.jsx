@@ -10,7 +10,7 @@ const AlmacenComponent = () => {
   const registrarAlmacen = async () => {
     try {
       const respuesta = await axios.post(
-        "https://localhost:7010/api/Almacens",
+        "https://localhost:5001/api/Almacens",
         {
           NombreAlmacen: nombre,
           DireccionAlmacen: direccion,

@@ -11,7 +11,7 @@ const AlmacenEdit = () => {
   useEffect(() => {
     const cargarAlmacen = async () => {
       try {
-        const respuesta = await axios.get(`https://localhost:7010/api/Almacens/${id}`);
+        const respuesta = await axios.get(`https://localhost:5001/api/Almacens/${id}`);
         // Asegúrate de que los campos en `respuesta.data` coincidan con tu API
         setNombre(respuesta.data.nombreAlmacen);
         setDireccion(respuesta.data.direccionAlmacen);
@@ -28,7 +28,7 @@ const AlmacenEdit = () => {
   const editarAlmacen = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://localhost:7010/api/Almacens/${id}`, {
+      await axios.put(`https://localhost:5001/api/Almacens/${id}`, {
         NombreAlmacen: nombre,
         DireccionAlmacen: direccion,
       });
